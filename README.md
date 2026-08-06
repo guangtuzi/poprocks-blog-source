@@ -1,2 +1,7 @@
-# guangtuzi.github.io
-WhatUpBaby legal pages: Privacy Policy and Terms of Service / EULA
+# WhatUpBaby Legal Pages
+
+Minimal static GitHub Pages site containing:
+
+- `privacy.html` — Privacy Policy
+- `terms.html` — Terms of Service / EULA
+- `index.html` — Landing page linking to both documents
