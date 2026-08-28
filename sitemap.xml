@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://guangtuzi.github.io/categories/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guangtuzi.github.io/about/</loc>
     
     <lastmod>2026-08-28</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://guangtuzi.github.io/tags/</loc>
-    
-    <lastmod>2026-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guangtuzi.github.io/categories/</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -74,6 +74,20 @@
 
   
   <url>
+    <loc>https://guangtuzi.github.io/tags/%E5%86%99%E4%BD%9C/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangtuzi.github.io/tags/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://guangtuzi.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -89,20 +103,6 @@
   
   <url>
     <loc>https://guangtuzi.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://guangtuzi.github.io/tags/%E5%86%99%E4%BD%9C/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://guangtuzi.github.io/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -132,14 +132,14 @@
 
   
   <url>
-    <loc>https://guangtuzi.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>https://guangtuzi.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://guangtuzi.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://guangtuzi.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
