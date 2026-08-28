@@ -2,7 +2,7 @@
   "name": "guangtuzi-github-io",
   "version": "1.0.0",
   "private": true,
-  "description": "FredMan's Hexo-powered technical blog for GitHub Pages.",
+  "description": "JasonZhuang‘s Blog, powered by Hexo and GitHub Pages.",
   "scripts": {
     "clean": "hexo clean",
     "build": "hexo clean && hexo generate",

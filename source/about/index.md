@@ -2,11 +2,11 @@
 title: 关于
 date: 2026-08-28 12:00:00
 layout: page
-description: 关于 FredMan 与这个技术博客。
+description: 关于 JasonZhuang‘s Blog 与这个技术博客。
 comments: false
 ---
 
-你好，我是 **FredMan**，一名持续学习的软件开发者。
+你好，欢迎来到 **JasonZhuang‘s Blog**。我是一名持续学习的软件开发者。
 
 这个博客用来沉淀真实项目里的判断、取舍和复盘。我更关心一项技术为什么有效、在什么约束下会失效，以及怎样把它变成团队可以重复使用的经验。
 
