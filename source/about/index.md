@@ -24,4 +24,4 @@ comments: false
 3. 尽量提供可以运行的示例和可以验证的结论。
 4. 当旧文章不再准确时，更新它，而不是让它静静过期。
 
-你可以在 [GitHub](https://github.com/guangtuzi) 查看我的项目，或通过 [zhuangjiahua@gmail.com](mailto:zhuangjiahua@gmail.com) 联系我。
+你可以在 [GitHub](https://github.com/guangtuzi) 查看我的项目，或通过 [guangtuzi@gmail.com](mailto:guangtuzi@gmail.com) 联系我。
