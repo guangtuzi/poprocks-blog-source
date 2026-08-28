@@ -35,6 +35,7 @@ skip_render:
   - privacy.html
   - terms.html
   - bebiwhy/**
+  - admin/**
 include:
   - .nojekyll
 exclude: null

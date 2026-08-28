@@ -15,6 +15,12 @@ npm run serve
 
 ## 写一篇文章
 
+在线管理后台：<https://guangtuzi.github.io/admin/>
+
+后台使用 GitHub 访问令牌登录，直接管理 `hexo-source` 分支。第一次进入时选择“使用令牌登录”，按照页面提供的 GitHub 链接创建令牌并粘贴；令牌只保存在当前浏览器中，不要写入仓库或发送给他人。后台支持中文文章、英文文章、关于页面和图片上传，保存后会自动触发发布流程。
+
+也可以继续使用本地命令：
+
 ```bash
 npm run new -- post "my-new-post"
 ```
