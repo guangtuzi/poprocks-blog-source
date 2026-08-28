@@ -1,0 +1,52 @@
+# Terminal Canvas theme configuration
+
+profile:
+  name: "FredMan"
+  role: "Software Engineer"
+  bio: "记录工程实践、系统设计与持续学习。"
+  location: "China"
+  status: "Available for thoughtful collaboration"
+  focus: "Web · Systems · AI"
+
+hero:
+  eyebrow: "BUILD · LEARN · SHARE"
+  title: "把复杂技术，写成清晰答案。"
+  description: "这里收录真实项目中的思考、取舍与实现细节，也记录那些值得反复推敲的工程问题。"
+  primary_label: "开始阅读"
+  primary_link: "/archives/"
+  secondary_label: "了解作者"
+  secondary_link: "/about/"
+
+nav:
+  - label: "首页"
+    path: "/"
+  - label: "归档"
+    path: "/archives/"
+  - label: "分类"
+    path: "/categories/"
+  - label: "标签"
+    path: "/tags/"
+  - label: "关于"
+    path: "/about/"
+
+social:
+  - label: "GitHub"
+    url: "https://github.com/guangtuzi"
+  - label: "Email"
+    url: "mailto:zhuangjiahua@gmail.com"
+
+display:
+  featured_limit: 3
+  category_limit: 8
+  excerpt_length: 132
+
+post:
+  toc: true
+  toc_title: "本文目录"
+  show_updated: true
+
+footer:
+  note: "Built with Hexo · Ideas stay in motion."
+
+favicon: "/favicon.svg"
+rss_path: "/atom.xml"

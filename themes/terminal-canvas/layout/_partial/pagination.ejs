@@ -1,0 +1,11 @@
+<% if (page.total && page.total > 1) { %>
+  <nav class="pagination" aria-label="文章分页">
+    <div>
+      <% if (page.prev_link) { %><a class="page-link" href="<%= url_for(page.prev_link) %>" rel="prev">← 较新文章</a><% } else { %><span></span><% } %>
+    </div>
+    <span class="page-count"><span class="sr-only">当前第</span><%= page.current %> / <%= page.total %><span class="sr-only">页</span></span>
+    <div>
+      <% if (page.next_link) { %><a class="page-link" href="<%= url_for(page.next_link) %>" rel="next">较早文章 →</a><% } %>
+    </div>
+  </nav>
+<% } %>

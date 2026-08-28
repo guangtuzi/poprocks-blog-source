@@ -1,0 +1,55 @@
+<%
+  var siteName = config.title || 'Terminal Canvas';
+  var pageName = page.title || '';
+  var title = pageName ? pageName + ' · ' + siteName : siteName;
+  var description = meta_description(page);
+  var canonical = absolute_url(page.path || '/');
+  var cover = page.cover ? absolute_url(page.cover) : '';
+  var schema = {
+    '@context': 'https://schema.org',
+    '@type': is_post() ? 'BlogPosting' : 'WebSite',
+    name: title,
+    headline: pageName || siteName,
+    description: description,
+    url: canonical
+  };
+  if (is_post()) {
+    schema.datePublished = page.date && new Date(page.date).toISOString();
+    schema.dateModified = page.updated && new Date(page.updated).toISOString();
+    schema.author = { '@type': 'Person', name: (theme.profile && theme.profile.name) || config.author || siteName };
+  }
+  if (cover) schema.image = cover;
+%>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101512" media="(prefers-color-scheme: dark)">
+<title><%= title %></title>
+<meta name="description" content="<%= description %>">
+<link rel="canonical" href="<%= canonical %>">
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= description %>">
+<meta property="og:url" content="<%= canonical %>">
+<meta property="og:site_name" content="<%= siteName %>">
+<% if (cover) { %><meta property="og:image" content="<%= cover %>"><% } %>
+<meta name="twitter:card" content="<%= cover ? 'summary_large_image' : 'summary' %>">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>">
+<% if (cover) { %><meta name="twitter:image" content="<%= cover %>"><% } %>
+<% if (theme.favicon) { %><link rel="icon" href="<%= url_for(theme.favicon) %>"><% } %>
+<% if (theme.rss_path) { %><link rel="alternate" type="application/atom+xml" title="<%= siteName %>" href="<%= url_for(theme.rss_path) %>"><% } %>
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.remove('no-js');
+    root.classList.add('js');
+    try {
+      var saved = localStorage.getItem('terminal-canvas-theme');
+      if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+    } catch (_) {}
+  }());
+</script>
+<%- css('css/style.css') %>
+<script type="application/ld+json"><%- JSON.stringify(schema).replace(/</g, '\\u003c') %></script>
