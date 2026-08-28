@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guangtuzi.github.io/categories/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guangtuzi.github.io/404</loc>
     
     <lastmod>2026-08-28</lastmod>
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://guangtuzi.github.io/categories/</loc>
+    <loc>https://guangtuzi.github.io/en/</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -38,7 +47,34 @@
   </url>
   
   <url>
+    <loc>https://guangtuzi.github.io/en/about/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangtuzi.github.io/en/archives/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guangtuzi.github.io/posts/2026/08/hello-world/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangtuzi.github.io/en/posts/start-here/</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -56,7 +92,25 @@
   </url>
   
   <url>
+    <loc>https://guangtuzi.github.io/en/posts/reproducible-hexo-deployment/</loc>
+    
+    <lastmod>2026-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guangtuzi.github.io/posts/2026/08/debugging-with-evidence/</loc>
+    
+    <lastmod>2026-08-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guangtuzi.github.io/en/posts/debugging-with-evidence/</loc>
     
     <lastmod>2026-08-25</lastmod>
     

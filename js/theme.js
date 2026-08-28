@@ -2,6 +2,7 @@
   'use strict';
 
   var root = document.documentElement;
+  var english = /^en(?:-|$)/i.test(root.getAttribute('lang') || '');
   var themeButton = document.querySelector('[data-theme-toggle]');
   var navButton = document.querySelector('[data-nav-toggle]');
   var nav = document.querySelector('[data-site-nav]');
@@ -17,8 +18,8 @@
     if (!themeButton) return;
     var dark = effectiveTheme() === 'dark';
     var icon = themeButton.querySelector('[data-theme-icon]');
-    themeButton.setAttribute('aria-label', dark ? '切换到浅色模式' : '切换到深色模式');
-    themeButton.setAttribute('title', dark ? '浅色模式' : '深色模式');
+    themeButton.setAttribute('aria-label', english ? (dark ? 'Switch to light mode' : 'Switch to dark mode') : (dark ? '切换到浅色模式' : '切换到深色模式'));
+    themeButton.setAttribute('title', english ? (dark ? 'Light mode' : 'Dark mode') : (dark ? '浅色模式' : '深色模式'));
     if (icon) icon.textContent = dark ? '☀' : '◐';
   }
 
@@ -46,7 +47,7 @@
     navButton.classList.toggle('is-open', open);
     navButton.setAttribute('aria-expanded', String(open));
     var label = navButton.querySelector('.sr-only');
-    if (label) label.textContent = open ? '关闭导航' : '打开导航';
+    if (label) label.textContent = english ? (open ? 'Close navigation' : 'Open navigation') : (open ? '关闭导航' : '打开导航');
   }
 
   if (navButton && nav) {
@@ -130,22 +131,22 @@
     var button = document.createElement('button');
     button.className = 'copy-button';
     button.type = 'button';
-    button.textContent = '复制';
-    button.setAttribute('aria-label', '复制代码');
+    button.textContent = english ? 'Copy' : '复制';
+    button.setAttribute('aria-label', english ? 'Copy code' : '复制代码');
     host.appendChild(button);
 
     button.addEventListener('click', function () {
       copyText(source.textContent || '').then(function () {
-        button.textContent = '已复制';
+        button.textContent = english ? 'Copied' : '已复制';
         button.classList.add('is-copied');
-        if (copyStatus) copyStatus.textContent = '代码已复制到剪贴板';
+        if (copyStatus) copyStatus.textContent = english ? 'Code copied to clipboard' : '代码已复制到剪贴板';
         window.setTimeout(function () {
-          button.textContent = '复制';
+          button.textContent = english ? 'Copy' : '复制';
           button.classList.remove('is-copied');
         }, 1800);
       }).catch(function () {
-        button.textContent = '复制失败';
-        if (copyStatus) copyStatus.textContent = '代码复制失败，请手动选择代码';
+        button.textContent = english ? 'Copy failed' : '复制失败';
+        if (copyStatus) copyStatus.textContent = english ? 'Copy failed. Please select the code manually.' : '代码复制失败，请手动选择代码';
       });
     });
   });
