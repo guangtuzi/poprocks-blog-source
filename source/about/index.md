@@ -2,6 +2,8 @@
 title: 关于
 date: 2026-08-28 12:00:00
 layout: page
+lang: zh-CN
+translation: /en/about/
 description: 关于 JasonZhuang‘s Blog 与这个技术博客。
 comments: false
 ---

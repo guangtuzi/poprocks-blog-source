@@ -1,5 +1,7 @@
 ---
 title: 从这里开始：一份技术博客的自我说明
+lang: zh-CN
+translation: /en/posts/start-here/
 date: 2026-08-28 20:00:00
 updated: 2026-08-28 20:00:00
 categories:

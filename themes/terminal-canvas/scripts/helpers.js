@@ -26,11 +26,17 @@ function countWords(content) {
   return { cjk: cjk.length, latin: latin.length, total: cjk.length + latin.length };
 }
 
-function localeFor(config) {
-  var language = config && config.language;
+function localeFor(config, page) {
+  var language = page && page.lang;
+  if (!language && page && /^en(?:\/|$)/i.test(String(page.path || ''))) language = 'en';
+  if (!language) language = config && config.language;
   if (Array.isArray(language)) language = language[0];
   if (!language) return 'zh-CN';
   return String(language).replace('_', '-');
+}
+
+function currentPage(context) {
+  return context && context.page ? context.page : {};
 }
 
 hexo.extend.helper.register('reading_time', function (content) {
@@ -57,7 +63,7 @@ hexo.extend.helper.register('format_date', function (value, style) {
   }
 
   try {
-    return new Intl.DateTimeFormat(localeFor(this.config), options).format(date);
+    return new Intl.DateTimeFormat(localeFor(this.config, currentPage(this)), options).format(date);
   } catch (_) {
     return new Intl.DateTimeFormat('zh-CN', options).format(date);
   }
@@ -102,5 +108,9 @@ hexo.extend.helper.register('nav_active', function (target, current) {
 });
 
 hexo.extend.helper.register('site_language', function () {
-  return localeFor(this.config);
+  return localeFor(this.config, currentPage(this));
+});
+
+hexo.extend.helper.register('is_english', function () {
+  return /^en(?:-|$)/i.test(localeFor(this.config, currentPage(this)));
 });

@@ -1,15 +1,17 @@
 <%
+  var english = is_english();
   var socials = theme.social || [];
   var footer = theme.footer || {};
+  var homePath = english ? '/en/' : '/';
 %>
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div>
-      <a class="footer-brand" href="<%= url_for('/') %>"><%= config.title || 'Terminal Canvas' %></a>
-      <p><%= footer.note || 'Ideas stay in motion.' %></p>
+      <a class="footer-brand" href="<%= url_for(homePath) %>"><%= config.title || 'Terminal Canvas' %></a>
+      <p><%= (english ? footer.note_en : footer.note) || 'Ideas stay in motion.' %></p>
     </div>
     <% if (socials.length) { %>
-      <nav class="social-links" aria-label="社交链接">
+      <nav class="social-links" aria-label="<%= english ? 'Social links' : '社交链接' %>">
         <% socials.forEach(function (item) { %>
           <a href="<%= item.url %>"<% if (!/^mailto:/i.test(item.url)) { %> target="_blank" rel="me noopener noreferrer"<% } %>><%= item.label %><span aria-hidden="true">↗</span></a>
         <% }); %>
@@ -17,8 +19,8 @@
     <% } %>
     <div class="footer-meta">
       <span>© <%= new Date().getFullYear() %> <%= (theme.profile && theme.profile.name) || config.author || config.title %></span>
-      <span class="legal-links">BebiWhy: <a href="/privacy.html">隐私</a><i aria-hidden="true">/</i><a href="/terms.html">条款</a></span>
-      <a href="#top" data-back-top>回到顶部 ↑</a>
+      <span class="legal-links">BebiWhy: <a href="/privacy.html"><%= english ? 'Privacy' : '隐私' %></a><i aria-hidden="true">/</i><a href="/terms.html"><%= english ? 'Terms' : '条款' %></a></span>
+      <a href="#top" data-back-top><%= english ? 'Back to top' : '回到顶部' %> ↑</a>
     </div>
   </div>
 </footer>

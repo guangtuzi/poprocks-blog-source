@@ -1,5 +1,7 @@
 ---
 title: 用证据驱动排障：从“可能是”到可验证的结论
+lang: zh-CN
+translation: /en/posts/debugging-with-evidence/
 date: 2026-08-25 21:10:00
 updated: 2026-08-25 21:10:00
 categories:

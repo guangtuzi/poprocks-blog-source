@@ -1,5 +1,7 @@
 ---
 title: 让 Hexo 发布变得可复现：从本地命令到 GitHub Actions
+lang: zh-CN
+translation: /en/posts/reproducible-hexo-deployment/
 date: 2026-08-27 19:30:00
 updated: 2026-08-28 18:00:00
 categories:

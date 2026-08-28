@@ -1,13 +1,17 @@
 <%
+  var english = is_english();
   var profile = theme.profile || {};
-  var hero = theme.hero || {};
+  var hero = english ? (theme.hero_en || {}) : (theme.hero || {});
   var display = theme.display || {};
   var firstPage = !page.current || page.current === 1;
-  var allPosts = site.posts && site.posts.toArray ? site.posts.toArray() : [];
+  var allPosts = english
+    ? (site.pages && site.pages.toArray ? site.pages.toArray().filter(function (item) { return item.type === 'english-post'; }) : [])
+    : (site.posts && site.posts.toArray ? site.posts.toArray().filter(function (item) { return item.lang !== 'en'; }) : []);
+  allPosts.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
   var explicitFeatured = allPosts.filter(function (post) { return post.featured; });
   var featuredPosts = (explicitFeatured.length ? explicitFeatured : allPosts).slice(0, display.featured_limit || 3);
-  var currentPosts = page.posts && page.posts.toArray ? page.posts.toArray() : [];
-  var categories = site.categories && site.categories.toArray ? site.categories.toArray() : [];
+  var currentPosts = english ? allPosts : (page.posts && page.posts.toArray ? page.posts.toArray().filter(function (item) { return item.lang !== 'en'; }) : []);
+  var categories = english ? [] : (site.categories && site.categories.toArray ? site.categories.toArray() : []);
   categories.sort(function (a, b) { return b.length - a.length; });
   categories = categories.slice(0, display.category_limit || 8);
 %>
@@ -23,7 +27,7 @@
       </div>
     </div>
 
-    <aside class="terminal-panel" aria-label="站点概览">
+    <aside class="terminal-panel" aria-label="<%= english ? 'Site overview' : '站点概览' %>">
       <div class="terminal-bar">
         <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span>~/notes/overview</span>
@@ -37,8 +41,13 @@
       </div>
       <dl class="site-stats">
         <div><dt>POSTS</dt><dd><%= allPosts.length %></dd></div>
-        <div><dt>CATEGORIES</dt><dd><%= site.categories ? site.categories.length : 0 %></dd></div>
-        <div><dt>TAGS</dt><dd><%= site.tags ? site.tags.length : 0 %></dd></div>
+        <% if (english) { %>
+          <div><dt>LANGUAGES</dt><dd>2</dd></div>
+          <div><dt>STATUS</dt><dd>●</dd></div>
+        <% } else { %>
+          <div><dt>CATEGORIES</dt><dd><%= site.categories ? site.categories.length : 0 %></dd></div>
+          <div><dt>TAGS</dt><dd><%= site.tags ? site.tags.length : 0 %></dd></div>
+        <% } %>
       </dl>
     </aside>
   </section>
@@ -46,8 +55,8 @@
   <% if (featuredPosts.length) { %>
     <section class="section shell" aria-labelledby="featured-title">
       <div class="section-heading">
-        <div><span class="section-index">01</span><h2 id="featured-title">精选文章</h2></div>
-        <p>值得从这里开始的长期内容</p>
+        <div><span class="section-index">01</span><h2 id="featured-title"><%= english ? 'Featured writing' : '精选文章' %></h2></div>
+        <p><%= english ? 'A good place to begin' : '值得从这里开始的长期内容' %></p>
       </div>
       <div class="featured-grid">
         <% featuredPosts.forEach(function (post) { %>
@@ -60,8 +69,8 @@
 
 <section class="section shell" aria-labelledby="latest-title">
   <div class="section-heading">
-    <div><span class="section-index"><%= firstPage ? '02' : String(page.current || 1).padStart(2, '0') %></span><h2 id="latest-title"><%= firstPage ? '最新文章' : '继续阅读' %></h2></div>
-    <a href="<%= url_for('/archives/') %>">查看全部 <span aria-hidden="true">↗</span></a>
+    <div><span class="section-index"><%= firstPage ? '02' : String(page.current || 1).padStart(2, '0') %></span><h2 id="latest-title"><%= english ? (firstPage ? 'Latest posts' : 'Keep reading') : (firstPage ? '最新文章' : '继续阅读') %></h2></div>
+    <a href="<%= url_for(english ? '/en/archives/' : '/archives/') %>"><%= english ? 'View all' : '查看全部' %> <span aria-hidden="true">↗</span></a>
   </div>
   <% if (currentPosts.length) { %>
     <div class="post-grid">
@@ -70,7 +79,7 @@
       <% }); %>
     </div>
   <% } else { %>
-    <div class="empty-state"><span aria-hidden="true">{ }</span><h2>第一篇文章正在路上</h2><p>写作从一个值得回答的问题开始。</p></div>
+    <div class="empty-state"><span aria-hidden="true">{ }</span><h2><%= english ? 'The first post is on its way' : '第一篇文章正在路上' %></h2><p><%= english ? 'Writing begins with a question worth answering.' : '写作从一个值得回答的问题开始。' %></p></div>
   <% } %>
   <%- partial('_partial/pagination') %>
 </section>

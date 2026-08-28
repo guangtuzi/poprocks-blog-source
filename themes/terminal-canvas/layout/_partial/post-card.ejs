@@ -1,11 +1,12 @@
 <%
+  var english = post.lang === 'en' || is_english();
   var excerptLimit = (theme.display && theme.display.excerpt_length) || 132;
   var categories = post.categories && post.categories.toArray ? post.categories.toArray() : [];
   var tags = post.tags && post.tags.toArray ? post.tags.toArray() : [];
   var featuredCard = typeof featured !== 'undefined' && featured;
 %>
 <article class="post-card<%= featuredCard ? ' is-featured' : '' %>">
-  <a class="post-card-hit" href="<%= url_for(post.path) %>" aria-label="阅读：<%= post.title %>"></a>
+  <a class="post-card-hit" href="<%= url_for(post.path) %>" aria-label="<%= english ? 'Read: ' : '阅读：' %><%= post.title %>"></a>
   <div class="post-card-topline">
     <% if (featuredCard) { %><span class="micro-label accent-label">SELECTED</span><% } else { %><span class="micro-label">ARTICLE</span><% } %>
     <time datetime="<%= new Date(post.date).toISOString() %>"><%= format_date(post.date, 'short') %></time>
@@ -15,7 +16,7 @@
     <p class="post-card-summary"><%= summary %></p>
   <% } %>
   <div class="post-card-meta">
-    <span><%= reading_time(post.content) %> 分钟阅读</span>
+    <span><%= reading_time(post.content) %> <%= english ? 'min read' : '分钟阅读' %></span>
     <% if (categories.length) { %>
       <a href="<%= url_for(categories[0].path) %>"><%= categories[0].name %></a>
     <% } else if (tags.length) { %>

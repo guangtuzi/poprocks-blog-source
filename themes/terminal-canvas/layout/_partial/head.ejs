@@ -1,19 +1,25 @@
 <%
+  var english = is_english();
   var siteName = config.title || 'Terminal Canvas';
   var pageName = page.title || '';
   var title = pageName ? pageName + ' · ' + siteName : siteName;
   var description = meta_description(page);
   var canonical = absolute_url(page.path || '/');
   var cover = page.cover ? absolute_url(page.cover) : '';
+  var articlePage = is_post() || page.type === 'english-post';
+  var alternatePath = page.translation || (english ? '/' : '/en/');
+  if (!page.translation && !english && /^archives(?:\/|$)/i.test(String(page.path || ''))) alternatePath = '/en/archives/';
+  var alternateUrl = absolute_url(alternatePath);
   var schema = {
     '@context': 'https://schema.org',
-    '@type': is_post() ? 'BlogPosting' : 'WebSite',
+    '@type': articlePage ? 'BlogPosting' : 'WebSite',
     name: title,
     headline: pageName || siteName,
     description: description,
-    url: canonical
+    url: canonical,
+    inLanguage: english ? 'en' : 'zh-CN'
   };
-  if (is_post()) {
+  if (articlePage) {
     schema.datePublished = page.date && new Date(page.date).toISOString();
     schema.dateModified = page.updated && new Date(page.updated).toISOString();
     schema.author = { '@type': 'Person', name: (theme.profile && theme.profile.name) || config.author || siteName };
@@ -28,7 +34,11 @@
 <title><%= title %></title>
 <meta name="description" content="<%= description %>">
 <link rel="canonical" href="<%= canonical %>">
-<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<link rel="alternate" hreflang="<%= english ? 'en' : 'zh-CN' %>" href="<%= canonical %>">
+<link rel="alternate" hreflang="<%= english ? 'zh-CN' : 'en' %>" href="<%= alternateUrl %>">
+<link rel="alternate" hreflang="x-default" href="<%= english ? alternateUrl : canonical %>">
+<meta property="og:type" content="<%= articlePage ? 'article' : 'website' %>">
+<meta property="og:locale" content="<%= english ? 'en_US' : 'zh_CN' %>">
 <meta property="og:title" content="<%= title %>">
 <meta property="og:description" content="<%= description %>">
 <meta property="og:url" content="<%= canonical %>">

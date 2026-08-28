@@ -4,6 +4,7 @@ profile:
   name: "JasonZhuang‘s Blog"
   role: "Software Engineer"
   bio: "记录工程实践、系统设计与持续学习。"
+  bio_en: "Notes on engineering practice, system design, and continuous learning."
   location: "China"
   status: "Available for thoughtful collaboration"
   focus: "Web · Systems · AI"
@@ -17,6 +18,15 @@ hero:
   secondary_label: "了解作者"
   secondary_link: "/about/"
 
+hero_en:
+  eyebrow: "BUILD · LEARN · SHARE"
+  title: "Turn complex technology into clear answers."
+  description: "Notes on real projects, engineering trade-offs, implementation details, and the questions worth revisiting."
+  primary_label: "Start reading"
+  primary_link: "/en/archives/"
+  secondary_label: "About the author"
+  secondary_link: "/en/about/"
+
 nav:
   - label: "首页"
     path: "/"
@@ -28,6 +38,14 @@ nav:
     path: "/tags/"
   - label: "关于"
     path: "/about/"
+
+nav_en:
+  - label: "Home"
+    path: "/en/"
+  - label: "Archive"
+    path: "/en/archives/"
+  - label: "About"
+    path: "/en/about/"
 
 social:
   - label: "GitHub"
@@ -43,10 +61,12 @@ display:
 post:
   toc: true
   toc_title: "本文目录"
+  toc_title_en: "On this page"
   show_updated: true
 
 footer:
   note: "Built with Hexo · Ideas stay in motion."
+  note_en: "Built with Hexo · Ideas stay in motion."
 
 favicon: "/favicon.svg"
 rss_path: "/atom.xml"
