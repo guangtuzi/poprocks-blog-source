@@ -17,7 +17,7 @@ language:
 timezone: Asia/Shanghai
 
 # URL — GitHub user Pages site
-url: https://guangtuzi.github.io
+url: https://www.poppinglab.com
 root: /
 permalink: posts/:year/:month/:title/
 permalink_defaults: null

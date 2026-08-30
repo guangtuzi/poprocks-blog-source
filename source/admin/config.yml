@@ -5,8 +5,8 @@ backend:
   auth_methods:
     - token
 
-site_url: https://guangtuzi.github.io
-display_url: https://guangtuzi.github.io
+site_url: https://www.poppinglab.com
+display_url: https://www.poppinglab.com
 app_title: 爆炸糖先生的博客管理后台
 logo:
   src: /favicon.svg

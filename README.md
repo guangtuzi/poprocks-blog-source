@@ -15,7 +15,7 @@ npm run serve
 
 ## 写一篇文章
 
-在线管理后台：<https://guangtuzi.github.io/admin/>
+在线管理后台：<https://www.poppinglab.com/admin/>
 
 后台使用 GitHub 访问令牌登录，直接管理 `hexo-source` 分支。第一次进入时选择“使用令牌登录”，按照页面提供的 GitHub 链接创建令牌并粘贴；令牌只保存在当前浏览器中，不要写入仓库或发送给他人。后台支持中文文章、英文文章、关于页面和图片上传，保存后会自动触发发布流程。
 
@@ -49,5 +49,7 @@ npm run build
 - 样式与交互：`themes/terminal-canvas/source/`
 
 > 如果仓库不是 `guangtuzi.github.io`，请同时修改 `_config.yml` 中的 `url` 和 `root`，否则静态资源路径会出错。
+
+生产域名为 <https://www.poppinglab.com>；`source/CNAME` 会随构建产物发布到 `main`，不要删除。
 
 原站点的 BebiWhy 法律页面已原样保留在 `/privacy.html` 与 `/terms.html`；不要在博客改版时删除这两个稳定 URL。
