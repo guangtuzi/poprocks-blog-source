@@ -1,6 +1,10 @@
 <%
   var english = is_english();
   var profile = theme.profile || {};
+  var siteName = english ? (config.title_en || config.title) : config.title;
+  var profileName = english
+    ? (profile.name_en || config.author_en || siteName)
+    : (profile.name || config.author || siteName);
   var hero = english ? (theme.hero_en || {}) : (theme.hero || {});
   var display = theme.display || {};
   var firstPage = !page.current || page.current === 1;
@@ -19,7 +23,7 @@
   <section class="hero-section shell" aria-labelledby="hero-title">
     <div class="hero-copy">
       <span class="eyebrow"><%= hero.eyebrow || 'BUILD · LEARN · SHARE' %></span>
-      <h1 id="hero-title"><%= hero.title || config.title %></h1>
+      <h1 id="hero-title"><%= hero.title || siteName %></h1>
       <p><%= hero.description || config.description %></p>
       <div class="hero-actions">
         <a class="button button-primary" href="<%= url_for(hero.primary_link || '/archives/') %>"><%= hero.primary_label || '开始阅读' %><span aria-hidden="true">→</span></a>
@@ -35,7 +39,7 @@
       </div>
       <div class="terminal-body">
         <div class="terminal-command"><span>$</span> whoami</div>
-        <p><strong><%= profile.name || config.author || config.title %></strong><br><%= profile.role || 'Software Engineer' %></p>
+        <p><strong><%= profileName %></strong><br><%= profile.role || 'Software Engineer' %></p>
         <div class="terminal-command"><span>$</span> current_focus</div>
         <p><%= profile.focus || 'Engineering · Systems · Learning' %><span class="cursor" aria-hidden="true"></span></p>
       </div>

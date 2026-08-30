@@ -1,6 +1,10 @@
 <%
   var english = is_english();
   var profile = theme.profile || {};
+  var siteName = english ? (config.title_en || config.title) : config.title;
+  var profileName = english
+    ? (profile.name_en || config.author_en || siteName)
+    : (profile.name || config.author || siteName);
   var categories = page.categories && page.categories.toArray ? page.categories.toArray() : [];
   var tags = page.tags && page.tags.toArray ? page.tags.toArray() : [];
   var tocEnabled = !theme.post || theme.post.toc !== false;
@@ -49,8 +53,8 @@
       </div>
     <% } %>
     <div class="author-note">
-      <div class="author-monogram" aria-hidden="true"><%= ((theme.profile && theme.profile.name) || config.author || 'T').slice(0, 1) %></div>
-      <div><span>WRITTEN BY</span><strong><%= profile.name || config.author || config.title %></strong><p><%= (english ? profile.bio_en : profile.bio) || config.description %></p></div>
+      <div class="author-monogram" aria-hidden="true"><%= (profileName || 'T').slice(0, 1) %></div>
+      <div><span>WRITTEN BY</span><strong><%= profileName %></strong><p><%= (english ? profile.bio_en : profile.bio) || config.description %></p></div>
     </div>
 
     <% if (page.prev || page.next) { %>

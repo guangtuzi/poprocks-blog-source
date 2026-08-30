@@ -1,4 +1,4 @@
-# JasonZhuang‘s Blog
+# 爆炸糖先生的博客 / Mr. Poprocks' Blog
 
 一个基于 [Hexo](https://hexo.io/) 的技术博客，使用自定义 `terminal-canvas` 主题，并通过 GitHub Actions 自动发布到 GitHub Pages。
 

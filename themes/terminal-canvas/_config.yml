@@ -1,7 +1,8 @@
 # Terminal Canvas theme configuration
 
 profile:
-  name: "JasonZhuang‘s Blog"
+  name: "爆炸糖先生的博客"
+  name_en: "Mr. Poprocks' Blog"
   role: "Software Engineer"
   bio: "记录工程实践、系统设计与持续学习。"
   bio_en: "Notes on engineering practice, system design, and continuous learning."

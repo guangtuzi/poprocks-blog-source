@@ -4,11 +4,11 @@ date: 2026-08-28 12:00:00
 layout: page
 lang: en
 translation: /about/
-description: About JasonZhuang‘s Blog and the ideas behind it.
+description: About Mr. Poprocks' Blog and the ideas behind it.
 comments: false
 ---
 
-Welcome to **JasonZhuang‘s Blog**. I am a software developer who believes that continuous learning works best when it leaves a clear trail.
+Welcome to **Mr. Poprocks' Blog**. I am a software developer who believes that continuous learning works best when it leaves a clear trail.
 
 This site captures the decisions, trade-offs, and lessons that emerge from real projects. I care less about declaring that a technology is “best” and more about understanding why it works, where it stops working, and how a team can turn it into repeatable practice.
 

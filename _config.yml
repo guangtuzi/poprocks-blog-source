@@ -1,5 +1,6 @@
 # Site
-title: JasonZhuang‘s Blog
+title: 爆炸糖先生的博客
+title_en: "Mr. Poprocks' Blog"
 subtitle: 代码、架构与持续成长
 description: 记录软件工程、系统设计与开发实践，把复杂问题讲清楚。
 keywords:
@@ -8,7 +9,8 @@ keywords:
   - Web 开发
   - Android
   - 开源
-author: JasonZhuang‘s Blog
+author: 爆炸糖先生的博客
+author_en: "Mr. Poprocks' Blog"
 language:
   - zh-CN
   - en
