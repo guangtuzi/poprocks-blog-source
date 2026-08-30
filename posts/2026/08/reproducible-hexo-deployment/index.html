@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#101512" media="(prefers-color-scheme: dark)">
-<title>让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · JasonZhuang‘s Blog</title>
+<title>让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · 爆炸糖先生的博客</title>
 <meta name="description" content="不提交 public 目录，也不维护 gh-pages 分支；用锁文件和官方 Pages Actions 建立一条稳定、可审计的发布流水线。">
 <link rel="canonical" href="https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/">
 <link rel="alternate" hreflang="zh-CN" href="https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/">
@@ -15,17 +15,17 @@
 <link rel="alternate" hreflang="x-default" href="https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · JasonZhuang‘s Blog">
+<meta property="og:title" content="让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · 爆炸糖先生的博客">
 <meta property="og:description" content="不提交 public 目录，也不维护 gh-pages 分支；用锁文件和官方 Pages Actions 建立一条稳定、可审计的发布流水线。">
 <meta property="og:url" content="https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/">
-<meta property="og:site_name" content="JasonZhuang‘s Blog">
+<meta property="og:site_name" content="爆炸糖先生的博客">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · JasonZhuang‘s Blog">
+<meta name="twitter:title" content="让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · 爆炸糖先生的博客">
 <meta name="twitter:description" content="不提交 public 目录，也不维护 gh-pages 分支；用锁文件和官方 Pages Actions 建立一条稳定、可审计的发布流水线。">
 
 <link rel="icon" href="/favicon.svg">
-<link rel="alternate" type="application/atom+xml" title="JasonZhuang‘s Blog" href="/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="爆炸糖先生的博客" href="/atom.xml">
 <script>
   (function () {
     var root = document.documentElement;
@@ -40,7 +40,7 @@
 
 <link rel="stylesheet" href="/css/style.css">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","name":"让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · JasonZhuang‘s Blog","headline":"让 Hexo 发布变得可复现：从本地命令到 GitHub Actions","description":"不提交 public 目录，也不维护 gh-pages 分支；用锁文件和官方 Pages Actions 建立一条稳定、可审计的发布流水线。","url":"https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/","inLanguage":"zh-CN","datePublished":"2026-08-27T11:30:00.000Z","dateModified":"2026-08-28T10:00:00.000Z","author":{"@type":"Person","name":"JasonZhuang‘s Blog"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","name":"让 Hexo 发布变得可复现：从本地命令到 GitHub Actions · 爆炸糖先生的博客","headline":"让 Hexo 发布变得可复现：从本地命令到 GitHub Actions","description":"不提交 public 目录，也不维护 gh-pages 分支；用锁文件和官方 Pages Actions 建立一条稳定、可审计的发布流水线。","url":"https://guangtuzi.github.io/posts/2026/08/reproducible-hexo-deployment/","inLanguage":"zh-CN","datePublished":"2026-08-27T11:30:00.000Z","dateModified":"2026-08-28T10:00:00.000Z","author":{"@type":"Person","name":"爆炸糖先生的博客"}}</script>
 
   <meta name="generator" content="Hexo 8.1.2"></head>
   <body class="site-body layout-post" id="top">
@@ -49,10 +49,10 @@
     
 <header class="site-header" data-site-header>
   <div class="shell header-inner">
-    <a class="brand" href="/" aria-label="JasonZhuang‘s Blog，返回首页">
+    <a class="brand" href="/" aria-label="爆炸糖先生的博客，返回首页">
       <span class="brand-mark" aria-hidden="true"><span>&gt;</span>_</span>
       <span class="brand-copy">
-        <strong>JasonZhuang‘s Blog</strong>
+        <strong>爆炸糖先生的博客</strong>
         <span>Software Engineer</span>
       </span>
     </a>
@@ -176,8 +176,8 @@
       </div>
     
     <div class="author-note">
-      <div class="author-monogram" aria-hidden="true">J</div>
-      <div><span>WRITTEN BY</span><strong>JasonZhuang‘s Blog</strong><p>记录工程实践、系统设计与持续学习。</p></div>
+      <div class="author-monogram" aria-hidden="true">爆</div>
+      <div><span>WRITTEN BY</span><strong>爆炸糖先生的博客</strong><p>记录工程实践、系统设计与持续学习。</p></div>
     </div>
 
     
@@ -195,7 +195,7 @@
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div>
-      <a class="footer-brand" href="/">JasonZhuang‘s Blog</a>
+      <a class="footer-brand" href="/">爆炸糖先生的博客</a>
       <p>Built with Hexo · Ideas stay in motion.</p>
     </div>
     
@@ -208,7 +208,7 @@
       </nav>
     
     <div class="footer-meta">
-      <span>© 2026 JasonZhuang‘s Blog</span>
+      <span>© 2026 爆炸糖先生的博客</span>
       <span class="legal-links">BebiWhy: <a href="/privacy.html">隐私</a><i aria-hidden="true">/</i><a href="/terms.html">条款</a></span>
       <a href="#top" data-back-top>回到顶部 ↑</a>
     </div>
